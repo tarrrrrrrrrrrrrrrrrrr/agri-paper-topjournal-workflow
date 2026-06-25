@@ -108,6 +108,10 @@ python scripts/audit_figures.py --directory "C:\path\to\figures" --output "C:\pa
 
 Visually inspect every figure. Automated checks cannot prove that labels, legends or network leaders are correctly placed.
 
+For journal-style bar charts with real uncertainty and `a/b/c` labels, use the
+bundled [`plot_significance_bars.py`](scripts/plot_significance_bars.py).
+Pass a validated model-summary CSV; never let plotting code invent significance.
+
 ## Stage 5: Compare old and new analyses
 
 Create a comparison table with original method, new method, assumptions, changed values/significance, conclusion impact, advantage, limitation and manuscript action. When a previous plot used incomplete data, identify exactly which variables/rows were omitted and whether the corrected result changes the scientific conclusion.

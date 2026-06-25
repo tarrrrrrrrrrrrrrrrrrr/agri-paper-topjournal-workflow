@@ -20,3 +20,16 @@ Copy this repository into your personal Codex skills directory:
 
 The required entry point is [SKILL.md](SKILL.md). Deterministic audit tools are under [`scripts/`](scripts/), and detailed rules are under [`references/`](references/).
 
+## Significance bar charts
+
+The repository includes a reusable publication-style bar-chart implementation:
+
+```powershell
+python scripts/plot_significance_bars.py `
+  --input examples/significance_bar_example.csv `
+  --output-base output/figure_main_effects `
+  --ylabel "Mean response"
+```
+
+It exports PDF and 600 dpi PNG with Times New Roman, black outlines, real error
+bars and model-supplied `a/b/c` compact-letter labels.

@@ -43,3 +43,30 @@ For every figure:
 
 Check file readability, blank canvases, DPI, dimensions, clipping, missing glyphs, overlapping labels, inconsistent palettes, unsupported significance labels, missing panels, duplicated filenames and manuscript-caption consistency. Inspect rendered output visually before replacing an existing figure.
 
+## Reusable significance-bar implementation
+
+Use [`scripts/plot_significance_bars.py`](../scripts/plot_significance_bars.py)
+for single-factor or combined main-effect bar panels. Input must be a validated
+model-summary CSV containing:
+
+- `label`: x-axis category;
+- `mean`: estimated or model-adjusted mean;
+- `error`: real SE or symmetric confidence-interval half-width;
+- `letter`: model-supported compact-letter display;
+- optional `block`, `order`, and hexadecimal `color`.
+
+The script deliberately does not calculate significance. Generate uncertainty
+and letters using the design-correct model, save them to CSV, then plot:
+
+```powershell
+python scripts/plot_significance_bars.py `
+  --input examples/significance_bar_example.csv `
+  --output-base output/figure_main_effects `
+  --ylabel "Mean response" `
+  --panel-label b
+```
+
+Defaults: Times New Roman, black bar borders, black capped error bars, bold
+letters above the uncertainty interval, shared y geometry, subtle separators
+between effect blocks, vector PDF and 600 dpi PNG. Numerical values are hidden
+unless `--show-values` is explicitly requested.

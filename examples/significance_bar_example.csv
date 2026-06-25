@@ -1,0 +1,8 @@
+block,label,order,mean,error,letter,color
+Light quality,W,1,0.672,0.024,b,#274753
+Light quality,R,2,0.640,0.021,b,#297270
+Light quality,B,3,0.725,0.026,a,#E7C66B
+Light quality,RB,4,0.796,0.029,a,#E66D50
+Nitrogen level,N0,1,0.634,0.020,b,#297270
+Nitrogen level,N1,2,0.711,0.023,a,#E7C66B
+Nitrogen level,N2,3,0.780,0.027,a,#E66D50
