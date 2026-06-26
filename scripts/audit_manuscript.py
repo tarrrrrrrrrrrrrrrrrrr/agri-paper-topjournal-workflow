@@ -12,7 +12,7 @@ except ModuleNotFoundError:
     from common import write_json
 
 
-INTERNAL_PATTERNS = ("revised analysis", "revised manuscript", "original manuscript", "easy to reject", "修改稿", "原稿", "二区投稿")
+INTERNAL_PATTERNS = ("revised analysis", "revised manuscript", "original manuscript", "easy to reject", "修改稿", "原稿", "二区投稿", "高水平期刊")
 SOURCE_PATTERNS = ("count.xlsx", "sheet1", "sheet 1", ".csv file", "source code file")
 OLD_JOURNALS = ("european journal of agronomy", "journal of integrative agriculture", "cover_letter_eja")
 

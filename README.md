@@ -1,35 +1,40 @@
-# Agricultural Paper Top-Journal Workflow
+# agri-paper-topjournal-workflow
 
-A reusable Codex skill for agricultural experimental papers, covering:
+Codex skill for agricultural manuscript analysis and writing workflows.
 
-- project, spreadsheet, figure and manuscript audits;
-- design-aware statistical analysis and mixed-model guidance;
-- Python publication figures with traceable uncertainty and significance;
-- academic writing, DOCX assembly and reference checks;
-- clean journal submission packages and final QA.
+It focuses on crop, agronomy and field-trial papers where raw data integrity,
+replicate structure, statistical defensibility, figure traceability, manuscript
+consistency and submission readiness matter.
 
-The workflow uses `lwxg` as its default worked example, while discovering factors, variables, replicates and conclusions independently for every new project.
+## What It Covers
 
-## Install
+- project inventory and source-file audit;
+- replicate-level data/design audit;
+- model-aware statistical planning;
+- manuscript-ready figure workflow;
+- old-vs-new analysis comparison;
+- evidence-based manuscript first draft;
+- Nature-style argument polishing;
+- writing quality lint gate;
+- citation, data availability and submission QA.
 
-Copy this repository into your personal Codex skills directory:
+## Quick Verification
 
-```text
-~/.codex/skills/agri-paper-topjournal-workflow/
-```
-
-The required entry point is [SKILL.md](SKILL.md). Deterministic audit tools are under [`scripts/`](scripts/), and detailed rules are under [`references/`](references/).
-
-## Significance bar charts
-
-The repository includes a reusable publication-style bar-chart implementation:
+Run the bundled regression checks:
 
 ```powershell
-python scripts/plot_significance_bars.py `
-  --input examples/significance_bar_example.csv `
-  --output-base output/figure_main_effects `
-  --ylabel "Mean response"
+python -B scripts/test_agri_skill.py
 ```
 
-It exports PDF and 600 dpi PNG with Times New Roman, black outlines, real error
-bars and model-supplied `a/b/c` compact-letter labels.
+Run the writing lint gate on the examples:
+
+```powershell
+python scripts/writing_lint.py examples/writing_lint_bad.tex --mode latex --lang en
+python scripts/writing_lint.py examples/writing_lint_good.tex --mode latex --lang en
+```
+
+## Notes
+
+This repository contains the reusable skill workflow, references, examples and
+helper scripts. It does not include user project data, manuscripts or private
+analysis outputs.

@@ -7,8 +7,8 @@ Use Python with matplotlib/seaborn and follow the `nature-figure` skill. Define 
 - Times New Roman for all figure text where available.
 - Use the supplied palette-reference image. Extract its colors once and reuse exact hexadecimal values. If colors are insufficient, extend within the same hue/lightness family and document the additions.
 - Use black edges on scatter points, bars, boxplots and filled marks when it improves separation.
-- Keep a coherent multi-hue palette; avoid a one-color interface.
-- Use real error bars from replicate-level data.
+- Keep a coherent multi-hue palette; avoid a one-color figure set.
+- Use real error bars from replicate-level data or model-estimated uncertainty.
 - Add model-supported `a/b/c` compact-letter display labels in empty space above error bars.
 - Horizontal tick labels are preferred when they fit. Wrap or abbreviate before rotating.
 
@@ -23,7 +23,7 @@ Use Python with matplotlib/seaborn and follow the `nature-figure` skill. Define 
 - When two panels are intended to be comparable, set equal grid width/height ratios and place colorbars in inset or dedicated axes so the colorbar does not shrink only one panel.
 - Add small axis padding for response surfaces and dose grids when observed points lie on plot boundaries; exact `xlim`/`ylim` values often clip marker edges.
 - Reserve whitespace for legends and colorbars. Do not let colorbars overlap neighboring panels or titles, and do not let legends cover confidence intervals.
-- Move explanatory micro-notes such as "95% CIs shown..." or "supported treatments = 0" to the caption/report unless they are essential for decoding a symbol inside the figure.
+- Move explanatory micro-notes such as "95% CIs shown" or "supported treatments = 0" to the caption/report unless they are essential for decoding a symbol inside the figure.
 - In trade-off scatter plots, keep true x/y coordinates. Do not jitter scientifically meaningful coordinates to reduce overlap; fade non-decision points and label only decision-relevant treatments.
 
 ## Chart-specific checks
@@ -53,9 +53,7 @@ Check file readability, blank canvases, DPI, dimensions, clipping, missing glyph
 
 ## Reusable significance-bar implementation
 
-Use [`scripts/plot_significance_bars.py`](../scripts/plot_significance_bars.py)
-for single-factor or combined main-effect bar panels. Input must be a validated
-model-summary CSV containing:
+Use [`scripts/plot_significance_bars.py`](../scripts/plot_significance_bars.py) for single-factor or combined main-effect bar panels. Input must be a validated model-summary CSV containing:
 
 - `label`: x-axis category;
 - `mean`: estimated or model-adjusted mean;
@@ -63,8 +61,7 @@ model-summary CSV containing:
 - `letter`: model-supported compact-letter display;
 - optional `block`, `order`, and hexadecimal `color`.
 
-The script deliberately does not calculate significance. Generate uncertainty
-and letters using the design-correct model, save them to CSV, then plot:
+The script deliberately does not calculate significance. Generate uncertainty and letters using the design-correct model, save them to CSV, then plot:
 
 ```powershell
 python scripts/plot_significance_bars.py `
@@ -74,10 +71,7 @@ python scripts/plot_significance_bars.py `
   --panel-label b
 ```
 
-Defaults: Times New Roman, black bar borders, black capped error bars, bold
-letters above the uncertainty interval, shared y geometry, subtle separators
-between effect blocks, vector PDF and 600 dpi PNG. Numerical values are hidden
-unless `--show-values` is explicitly requested.
+Defaults: Times New Roman, black bar borders, black capped error bars, bold letters above the uncertainty interval, shared y geometry, subtle separators between effect blocks, vector PDF and 600 dpi PNG. Numerical values are hidden unless `--show-values` is explicitly requested.
 
 ## Additional visual review
 

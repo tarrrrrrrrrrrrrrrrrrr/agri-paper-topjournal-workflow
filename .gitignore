@@ -1,7 +1,12 @@
 __pycache__/
-*.pyc
+*.py[cod]
 .pytest_cache/
-.venv/
-audit_reports/
-skill-validation/
+.mypy_cache/
+.ruff_cache/
 .DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.log
+reports/
+outputs/

@@ -14,7 +14,7 @@ DATA_EXT = {".xlsx", ".xls", ".csv", ".tsv"}
 MANUSCRIPT_EXT = {".docx", ".doc", ".pdf", ".md"}
 FIGURE_EXT = {".pdf", ".svg", ".tif", ".tiff", ".png", ".jpg", ".jpeg"}
 CODE_EXT = {".py", ".ipynb", ".r", ".rmd"}
-VERSION_TOKENS = ("backup", "before", "old", "copy", "副本", "tmp", "restored", "updated_v")
+VERSION_TOKENS = ("backup", "before", "old", "copy", "副本", "tmp", "temp", "restored", "updated_v")
 JOURNAL_TOKENS = ("eja", "european_journal_of_agronomy", "journal_of_integrative_agriculture")
 
 
@@ -27,7 +27,7 @@ def classify(path: Path) -> str:
         return "code"
     if suffix in FIGURE_EXT and any(x in lower for x in ("figure", "fig", "picture", "graphical")):
         return "figure"
-    if suffix in MANUSCRIPT_EXT and any(x in lower for x in ("manuscript", "paper", "稿", "中文")):
+    if suffix in MANUSCRIPT_EXT and any(x in lower for x in ("manuscript", "paper", "稿", "中文", "论文")):
         return "manuscript"
     if "cover" in lower and suffix in MANUSCRIPT_EXT:
         return "cover_letter"

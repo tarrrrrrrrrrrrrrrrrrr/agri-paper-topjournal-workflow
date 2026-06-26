@@ -32,5 +32,4 @@ Never add, remove or rewrite an AI declaration automatically. Check the target j
 
 ## Final report
 
-State separately: complete items, missing/blocking items, non-blocking recommendations, journal-scope risk, unverified visual-render risk and system fields the author must enter manually (reviewers, ORCID, classifications and confirmations).
-
+State separately: complete items, missing/blocking items, non-blocking recommendations, journal-scope risk, unverified visual-render risk and system fields the author must enter manually, such as reviewers, ORCID, classifications and confirmations.

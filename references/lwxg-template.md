@@ -1,8 +1,8 @@
 # `lwxg` Template Map
 
-Default example project: `C:\Users\唐梓然\Desktop\lwxg`.
+Example project: `C:\Users\唐梓然\Desktop\lwxg`.
 
-Use it as a pattern library, not as a source of conclusions for another project.
+Use it as a pattern library, not as a source of conclusions for another project. Do not analyze or modify this folder unless the user explicitly asks to work on the template itself.
 
 ## Source examples
 
@@ -27,4 +27,3 @@ Use it as a pattern library, not as a source of conclusions for another project.
 ## Portability rule
 
 For a new project, rediscover factors, levels, replicates, variables, stages, target journal, palette and scientific conclusions from that project's files. Never copy `lwxg` treatment counts, results, coefficients, significance letters, captions or biological claims.
-

@@ -1,0 +1,5 @@
+season,cultivar,treatment,yield_mean,yield_se,letter
+2024,A,CK,7.2,0.06,b
+2024,A,Shade,6.8,0.06,c
+2024,B,CK,7.8,0.06,a
+2024,B,Shade,7.0,0.06,bc
